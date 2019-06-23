@@ -24,48 +24,16 @@ using confirms can be found in this project under [ConfirmsExample.scala](https:
 ## Setup
 
 ### Sbt
-Since version `3.0.0`
 ``` scala
-libraryDependencies += "com.newmotion" %% "akka-rabbitmq" % "5.0.4-beta"
-```
-
-To add earlier releases as a dependency, you have to add the NewMotion public repository to your resolver list:
-``` scala
-resolvers += "New Motion Repository" at "https://nexus.thenewmotion.com/content/groups/public/"
-libraryDependencies += "com.thenewmotion.akka" %% "akka-rabbitmq" % "2.3"
+libraryDependencies += "com.github.pjfanning" %% "akka-rabbitmq" % "5.1.0"
 ```
 
 ### Maven
-Since version `4.0.0`
 ```xml
 <dependency>
-    <groupId>com.newmotion</groupId>
+    <groupId>com.github.pjfanning</groupId>
     <artifactId>akka-rabbitmq_{2.11/2.12}</artifactId>
-    <version>5.0.4-beta</version>
-</dependency>
-```
-
-Since version `3.0.0`
-```xml
-<dependency>
-    <groupId>com.thenewmotion</groupId>
-    <artifactId>akka-rabbitmq_{2.11/2.12}</artifactId>
-    <version>3.0.0</version>
-</dependency>
-```
-
-For prior releases
-```xml
-<repository>
-    <id>thenewmotion</id>
-    <name>New Motion Repository</name>
-    <url>http://nexus.thenewmotion.com/content/groups/public/</url>
-</repository>
-...
-<dependency>
-    <groupId>com.thenewmotion</groupId>
-    <artifactId>akka-rabbitmq_{2.11/2.12}</artifactId>
-    <version>2.3</version>
+    <version>5.1.0</version>
 </dependency>
 ```
 
@@ -240,48 +208,11 @@ object PublishSubscribe extends App {
 ```
 
 ## Changelog
-### 5.0.4-beta
+### 5.1.0
 
- * Fix: proper error handling of close channel and create channel
- * Fix: proper error handling of setup connection/channel callbacks
- * Fix: if callback exception is uncaught, close connection/channel
- * Fix: take into account blocking nature of new connection/channel
- * Fix: close channel if the channel actor never got it (deadletter)
- * Fix: channel actor shouldn't ask for channel after a connection shutdown
- * If unexpectedly received a new channel, close it and use the old instead
- * Log warning when a message isn't retried any longer + more debug logging
- * Update to latest dependencies:
-
-     * Akka: 2.5.8 -> 2.5.+ (provided)
-     * amqp-client: 5.1.1 -> 5.4.2
-     * Typesafe Config: 1.3.2 -> 1.3.3
-     * Specs2: 4.0.2 -> 4.3.4
-     * SBT: 1.0.3 -> 1.2.3
-     * sbt-build-seed: 4.0.2 -> 4.1.2
-     * sbt-sonatype: 2.0 -> 2.3
-
-### 5.0.2
-
- * Supersedes version 5.0.1 which has been withdrawn to investigate some unforeseen issues
-
-### 5.0.0
-
- * Update to latest dependencies:
-
-     * Akka: 2.4.14 -> 2.5.8
-     * amqp-client: 4.0.0 -> 5.1.1
-     * Typesafe Config: 1.3.1 -> 1.3.2
-     * Specs2: 3.8.6 -> 4.0.2
-     * SBT: 0.13.13 -> 1.0.3
-     * sbt-build-seed: 2.1.0 -> 4.0.2
-     * sbt-scalariform: 1.3.0 -> 1.8.2
-     * sbt-sonatype: 1.1 -> 2.0
-     * sbt-pgp: 1.0.0 -> 1.1.0
-
-### 4.0.0
-
- * Change organization from `com.thenewmotion` to `com.newmotion`
+ * Upgrade to AMQP Client 5.7.1
+ * Support Scala 2.13.0
 
 ## Other Libraries
 
-Akka-RabbitMQ is a low-level library, and leaves it to the coder to manually wire consumers, serialize messages, etc. If you'd like a higher-level abstraction library, look at [Op-Rabbit](https://github.com/SpinGo/op-rabbit.git) (which uses this library).
+Akka-RabbitMQ is a low-level library, and leaves it to the coder to manually wire consumers, serialize messages, etc. If you'd like a higher-level abstraction library, look at [Op-Rabbit](https://github.com/pjfanning/op-rabbit.git) (which uses this library).
