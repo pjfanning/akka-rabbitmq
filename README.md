@@ -1,5 +1,7 @@
 # Akka RabbitMQ client [![Build Status](https://secure.travis-ci.org/pjfanning/akka-rabbitmq.svg)](http://travis-ci.org/pjfanning/akka-rabbitmq)
 
+**Please use https://github.com/NewMotion/akka-rabbitmq 5.1.1 or above to get scala 2.13 support**
+
 This small library allows you use [RabbitMQ client](http://www.rabbitmq.com/java-client.html) via [Akka Actors](http://akka.io).
 The main idea implemented in library is to survive losing connection with RabbitMQ server
 
