@@ -1,9 +1,9 @@
 organization := "com.github.pjfanning"
 name := "akka-rabbitmq"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.12"
 
-crossScalaVersions := Seq("2.12.8", "2.13.0")
+crossScalaVersions := Seq("2.12.12", "2.13.4")
 
 licenses := Seq(("Apache License, Version 2.0", url("http://www.apache.org/licenses/LICENSE-2.0")))
 homepage := Some(new URL("https://github.com/pjfanning/akka-rabbitmq"))
